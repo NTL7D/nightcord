@@ -49,5 +49,5 @@ export const useChatScroll = (props: ChatScrollProps) => {
         });
       }, 100);
     }
-  }, [hasInitialized, props.bottomRef, props.chatRef, props.count]);
+  }, [hasInitialized, props.bottomRef, props.chatRef]);
 };

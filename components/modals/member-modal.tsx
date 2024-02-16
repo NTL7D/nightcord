@@ -92,12 +92,12 @@ export const MemberModal = () => {
 
   return (
     <Dialog open={isModalOpen} onOpenChange={onClose}>
-      <DialogContent className="bg-white text-black overflow-hidden">
+      <DialogContent className="bg-white dark:bg-[#313338] text-black dark:text-white overflow-hidden">
         <DialogHeader className="pt-8 px-6">
-          <DialogTitle className="text-2xl text-center font-bold">
+          <DialogTitle className="dark:text-[#F2F3F5] text-2xl text-center font-bold">
             Manage Members
           </DialogTitle>
-          <DialogDescription className="text-center text-zinc-500">
+          <DialogDescription className="text-center text-zinc-500 dark:text-zinc-400">
             {server?.members?.length} Members
           </DialogDescription>
         </DialogHeader>
@@ -106,11 +106,13 @@ export const MemberModal = () => {
             <div key={member.id} className="flex items-center gap-x-2 mb-6">
               <UserAvatar src={member.profile.imageUrl} />
               <div className="flex flex-col gap-y-1">
-                <div className="text-xs font-semibold flex items-center gap-x-1">
+                <div className="text-xs dark:text-[#F2F3F5] font-semibold flex items-center gap-x-1">
                   {member.profile.name}
                   {roleIconMap[member.role]}
                 </div>
-                <p className="text-xs text-zinc-500">{member.profile.email}</p>
+                <p className="text-xs text-zinc-500 dark:text-zinc- 400">
+                  {member.profile.email}
+                </p>
               </div>
               {server.profileId !== member.profileId &&
                 loadingId !== member.id && (

@@ -16,11 +16,11 @@ export const FileUpload = (props: FileUploadProps) => {
 
   if (props.value && fileType !== "pdf") {
     return (
-      <div className="relative h-20 w-20">
-        <Image fill src={props.value} alt="Upload" className="rounded-full" />
+      <div className="relative h-48 w-48">
+        <Image fill src={props.value} alt="Upload" className="rounded-[24px]" />
         <button
           onClick={() => props.onChange("")}
-          className="bg-rose-500 text-white p-1 rounded-full absolute top-0 right-0 shadow-sm"
+          className="bg-rose-500 text-white p-1 rounded-full absolute -top-2 -right-2 shadow-sm"
           type="button"
         >
           <X className="h-4 w-4" />
@@ -53,6 +53,7 @@ export const FileUpload = (props: FileUploadProps) => {
   }
   return (
     <UploadDropzone
+      className="bg-zinc-100 h-48"
       endpoint={props.endpoint}
       onClientUploadComplete={(res) => {
         props.onChange(res?.[0].url);
